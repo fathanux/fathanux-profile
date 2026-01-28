@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terima kasih telah mengirim pesan">
+    <title>Terima Kasih - Fachri Fathan</title>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-primary': '#0A0A0A',
+                        'bg-secondary': '#141414',
+                        'bg-tertiary': '#1F1F1F',
+                        'text-primary': '#FAFAFA',
+                        'text-secondary': '#A1A1A1',
+                        'accent': '#525252',
+                        'accent-hover': '#737373',
+                        'border': '#262626',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .checkmark-circle {
+            animation: scale-in 0.5s ease-out forwards;
+        }
+
+        .checkmark-path {
+            stroke-dasharray: 50;
+            stroke-dashoffset: 50;
+            animation: draw-check 0.5s ease-out 0.3s forwards;
+        }
+
+        @keyframes scale-in {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes draw-check {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .fade-in {
+            animation: fade-in 0.5s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-bg-primary font-inter text-text-primary antialiased min-h-screen flex items-center justify-center px-6">
+    <div class="max-w-md w-full text-center">
+        <!-- Success Icon -->
+        <div class="mb-8 flex justify-center">
+            <div class="w-24 h-24 bg-green-500/10 rounded-full flex items-center justify-center checkmark-circle">
+                <svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path class="checkmark-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                        d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Message -->
+        <div class="fade-in">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Terima Kasih!</h1>
+            <p class="text-text-secondary mb-8 leading-relaxed">
+                Pesan Anda telah berhasil terkirim. Saya akan segera menghubungi Anda melalui email yang telah
+                diberikan.
+            </p>
+
+            <!-- Back Button -->
+            <a href="index.html"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-text-primary text-bg-primary font-medium rounded-lg hover:bg-text-secondary transition-all">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Kembali ke Beranda
+            </a>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="fade-in mt-12 p-4 bg-bg-secondary border border-border rounded-lg">
+            <p class="text-sm text-text-secondary">
+                <span class="text-text-primary font-medium">Waktu respons:</span> Biasanya dalam 1-2 hari kerja
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

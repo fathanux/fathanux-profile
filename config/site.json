@@ -1,0 +1,55 @@
+{
+  "site": {
+    "title": "Fachr - Portfolio",
+    "description": "Personal portfolio website - Web Developer & Designer",
+    "author": "Fachr",
+    "language": "id",
+    "url": "https://example.com"
+  },
+  "profile": {
+    "name": "Fachr",
+    "headline": "Web Developer from Indonesia",
+    "email": "hello@example.com",
+    "location": "Indonesia"
+  },
+  "social": {
+    "github": "https://github.com/username",
+    "linkedin": "https://linkedin.com/in/username",
+    "twitter": "https://twitter.com/username"
+  },
+  "skills": [
+    { "name": "HTML & CSS", "level": 90 },
+    { "name": "JavaScript", "level": 75 },
+    { "name": "React", "level": 70 },
+    { "name": "UI/UX Design", "level": 65 }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project Alpha",
+      "description": "A modern web application with clean design and smooth interactions.",
+      "image": "assets/images/projects/project-1.jpg",
+      "tags": ["React", "Tailwind"],
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    {
+      "id": 2,
+      "title": "Project Beta",
+      "description": "Responsive landing page with smooth animations and dark theme.",
+      "image": "assets/images/projects/project-2.jpg",
+      "tags": ["HTML", "CSS", "JS"],
+      "demoUrl": "#",
+      "codeUrl": "#"
+    },
+    {
+      "id": 3,
+      "title": "Project Gamma",
+      "description": "UI/UX design project with focus on user experience and accessibility.",
+      "image": "assets/images/projects/project-3.jpg",
+      "tags": ["Figma", "UI/UX"],
+      "demoUrl": "#",
+      "codeUrl": "#"
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+/* ========================================
+   PORTFOLIO - Main Stylesheet
+   Dark Theme with Grey Accents
+   ======================================== */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+    /* Colors */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #141414;
+    --bg-tertiary: #1F1F1F;
+    --text-primary: #FAFAFA;
+    --text-secondary: #A1A1A1;
+    --accent: #525252;
+    --accent-hover: #737373;
+    --border: #262626;
+
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Spacing */
+    --section-padding: 5rem;
+    --container-max: 1200px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+}
+
+/* ---------- Base Reset ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Typography ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Utility Classes ---------- */
+.text-gradient {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-hover) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ---------- Navbar Styles ---------- */
+#navbar {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(10, 10, 10, 0.8);
+}
+
+#navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ---------- Hero Section ---------- */
+#hero {
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(82, 82, 82, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ---------- Project Cards ---------- */
+.project-card {
+    transition: transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Skill Items ---------- */
+.skill-item {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.skill-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skill-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skill-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.skill-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ---------- Selection ---------- */
+::selection {
+    background-color: var(--accent);
+    color: var(--text-primary);
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+/* ---------- Focus States (Accessibility) ---------- */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 2px;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3rem;
+    }
+
+    #hero::before {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ---------- Certificate Modal ---------- */
+#certificate-modal {
+    transition: opacity var(--transition-base);
+}
+
+#certificate-modal.show {
+    display: flex !important;
+    opacity: 1;
+}
+
+#certificate-modal img {
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ---------- Project Modal ---------- */
+#project-modal {
+    transition: opacity var(--transition-base);
+}
+
+#project-modal.show {
+    display: flex !important;
+    opacity: 1;
+}
+
+#project-modal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile modal improvements */
+@media (max-width: 768px) {
+    #certificate-modal .relative {
+        max-width: 95vw;
+        padding: 1rem;
+    }
+
+    #certificate-modal img {
+        max-height: 60vh;
+    }
+
+    #project-modal .relative {
+        max-width: 95vw;
+        margin: 1rem;
+    }
+
+    #project-modal .aspect-video {
+        min-height: 200px;
+    }
+
+    #project-modal .p-6 {
+        padding: 1rem;
+    }
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes modalOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.animate-modal-in {
+    animation: modalIn 0.3s ease forwards;
+}
+
+.animate-modal-out {
+    animation: modalOut 0.2s ease forwards;
+}

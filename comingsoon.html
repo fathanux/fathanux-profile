@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <meta name="description" content="Something awesome is coming soon. Stay tuned!">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-primary': '#0A0A0A',
+                        'bg-secondary': '#141414',
+                        'bg-tertiary': '#1F1F1F',
+                        'text-primary': '#FAFAFA',
+                        'text-secondary': '#A1A1A1',
+                        'accent': '#525252',
+                        'accent-hover': '#737373',
+                        'border': '#262626',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0A0A0A;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Animated gradient background */
+        .gradient-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(82, 82, 82, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.7;
+            }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Text reveal animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+
+        .delay-4 {
+            animation-delay: 0.8s;
+            opacity: 0;
+        }
+
+        /* Glowing effect */
+        .glow {
+            text-shadow: 0 0 40px rgba(250, 250, 250, 0.1);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-text-primary">
+    <!-- Background Effect -->
+    <div class="gradient-bg"></div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 text-center px-6 max-w-2xl mx-auto">
+
+        <!-- Icon -->
+        <div class="floating mb-8 fade-in-up delay-1">
+            <div
+                class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-bg-secondary border border-border">
+                <svg class="w-10 h-10 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 glow fade-in-up delay-2">
+            Coming Soon
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg md:text-xl text-text-secondary mb-8 fade-in-up delay-3">
+            pokonya adalah hehehe stay tuned!
+        </p>
+
+        <!-- Divider -->
+        <div class="flex items-center justify-center gap-4 mb-8 fade-in-up delay-3">
+            <div class="w-16 h-px bg-border"></div>
+            <svg class="w-4 h-4 text-text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3" />
+            </svg>
+            <div class="w-16 h-px bg-border"></div>
+        </div>
+
+        <!-- Back Button -->
+        <a href="index.html"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-bg-secondary border border-border rounded-lg text-text-primary hover:bg-bg-tertiary hover:border-accent transition-all duration-300 fade-in-up delay-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Kembali ke Portfolio
+        </a>
+
+        <!-- Social hint -->
+        <p class="mt-12 text-sm text-text-secondary fade-in-up delay-4">
+            Follow untuk update terbaru
+            <a href="https://instagram.com/fchrfthan" target="_blank"
+                class="text-text-primary hover:text-accent-hover transition-colors">
+                @fchrfthan
+            </a>
+        </p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 left-0 right-0 py-4 text-center">
+        <p class="text-xs text-text-secondary">
+            © 2026 Fachri Fathan Hidayat
+        </p>
+    </footer>
+</body>
+
+</html>
