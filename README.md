@@ -21,14 +21,6 @@ Modern & minimalist personal portfolio website with dark theme.
 3. Update content in `index.html`
 4. Open `index.html` in browser or use local server
 
-## 📋 Todo
-
-- [ ] Add profile photo
-- [ ] Add project images
-- [ ] Update personal information
-- [ ] Add resume/CV
-- [ ] Connect social media links
-
 ## 📄 License
 
 © 2026 Fachr. All rights reserved.
